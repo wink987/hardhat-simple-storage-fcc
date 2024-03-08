@@ -11,4 +11,5 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
 yarn hardhat  block-number --network sepolia
+git add .   git commit -m "<refresh>"    git push -u origin master
 ```
