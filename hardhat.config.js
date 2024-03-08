@@ -3,6 +3,7 @@ require("@nomicfoundation/hardhat-toolbox")
 require("@nomicfoundation/hardhat-verify")
 require("hardhat-deploy")
 require("./tasks/block-number") //相对路径导入
+require("hardhat-gas-reporter")
 const { ProxyAgent, setGlobalDispatcher } = require("undici")
 const proxyAgent = new ProxyAgent("http://127.0.0.1:7890")
 setGlobalDispatcher(proxyAgent)
@@ -10,6 +11,7 @@ setGlobalDispatcher(proxyAgent)
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 const PRIVATE_KEY = process.env.PRIVATE_KEY
+COIN_MARKET_API = process.env.COIN_MARKET_API
 module.exports = {
     defaultNetwork: "hardhat", //这里的hardhat-network每次新执行一次脚本都会重置
     solidity: "0.8.7",
@@ -29,5 +31,13 @@ module.exports = {
     },
     etherscan: {
         apiKey: ETHERSCAN_API_KEY,
+    },
+    gasReporter: {
+        enabled: false,
+        outputFile: "gas-report.txt",
+        noColors: true,
+        currency: "USD",
+        coinmarketcap: COIN_MARKET_API,
+        token: "MATIC",
     },
 }

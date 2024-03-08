@@ -1,14 +1,15 @@
 node_modules
 .env
-
+gas-report.txt
 # Hardhat files
 /cache
 /artifacts
-
+coverage.json
 # TypeChain files
 /typechain
 /typechain-types
-
+coverage
+#coverage的作用就是检查哪些合约中的代码没被执行
 # solidity-coverage files
 /coverage
 /coverage.json

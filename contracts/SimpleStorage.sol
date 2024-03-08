@@ -1,6 +1,6 @@
 // I'm a comment!
 // SPDX-License-Identifier: MIT
-
+//通过yarn hardhat  compile来编译合约
 pragma solidity 0.8.7;
 
 // pragma solidity ^0.8.0;
