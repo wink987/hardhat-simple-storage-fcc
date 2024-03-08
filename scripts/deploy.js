@@ -1,4 +1,4 @@
-const { ethers, run, network } = require("hardhat") //hardhat的好处是可以自动识别contracts包下面的已经编译好的合约，而ethers不可以
+const { ethers, run, network } = require("hardhat") //hardhat的好处是可以自动识别contracts包下面的已经编译好的合约，而ethers不可以。ethers和network: 是一个用于与以太坊网络进行交互的 JavaScript 库
 require("dotenv").config()
 async function mian() {
     const SimpleStorageFactory =
@@ -28,6 +28,7 @@ async function verify(ContractAddress, args) {
     console.log("verifying   contracts ......")
     try {
         await run("verify:verify", {
+            //run: 是 Hardhat 提供的一个函数，用于运行任务和脚本
             //第二个verify是相当于verify的一个功能，用来验证的
             address: ContractAddress,
             constructorArguments: args,
